@@ -744,11 +744,13 @@ require('lazy').setup({
           --
           -- <c-l> will move you to the right of each of the expansion locations.
           -- <c-h> is similar, except moving you backwards.
-          ['<C-l>'] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { 'i', 's' }),
+
+          -- KEEP IN MIND I COMMENTED OUT THE FOLLOWING LINES, IF YOU WANT SNIPPETS TO WORK UNCOMMMENT
+          --['<C-l>'] = cmp.mapping(function()
+          -- if luasnip.expand_or_locally_jumpable() then
+          --  luasnip.expand_or_jump()
+          --end
+          --end, { 'i', 's' }),
           ['<C-h>'] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
